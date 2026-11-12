@@ -12,7 +12,7 @@ function scrollToTabs() {
 }
 
 function showEngineering() {
-  if (!engineeringFolder.classList.contains("is-back")) {
+  if (!designFolder || !engineeringFolder.classList.contains("is-back")) {
     return;
   }
   engineeringFolder.classList.remove("is-back");
@@ -22,7 +22,7 @@ function showEngineering() {
 }
 
 function showDesign() {
-  if (!designFolder.classList.contains("is-back")) {
+  if (!designFolder || !designFolder.classList.contains("is-back")) {
     return;
   }
   designFolder.classList.remove("is-back");
@@ -32,9 +32,13 @@ function showDesign() {
 }
 
 engineeringTab.addEventListener("click", showEngineering);
-designTab.addEventListener("click", showDesign);
 engineeringFolder.addEventListener("click", showEngineering);
-designFolder.addEventListener("click", showDesign);
+
+// The design folder is commented out in index.html for now.
+if (designFolder && designTab) {
+  designTab.addEventListener("click", showDesign);
+  designFolder.addEventListener("click", showDesign);
+}
 
 const form = document.getElementById("contact-form");
 const status = document.querySelector(".form__status");

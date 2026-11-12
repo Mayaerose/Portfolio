@@ -511,6 +511,20 @@ body.design .header-link {
   flex-direction: column;
 }
 
+a.media {
+  display: block;
+}
+
+.project a.media img {
+  transition: transform .4s ease, filter .4s ease;
+}
+
+.project a.media:hover img,
+.project a.media:focus-visible img {
+  transform: scale(1.04);
+  filter: brightness(.92);
+}
+
 .project__body {
   display: flex;
   flex: 1;

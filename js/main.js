@@ -31,7 +31,9 @@ function showDesign() {
   scrollToTabs();
 }
 
-engineeringTab.addEventListener("click", showEngineering);
+if (engineeringTab) {
+  engineeringTab.addEventListener("click", showEngineering);
+}
 engineeringFolder.addEventListener("click", showEngineering);
 
 // The design folder is commented out in index.html for now.
